@@ -7,6 +7,7 @@ import com.google.common.hash.HashCode;
 import com.google.common.hash.Hashing;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.util.*;
@@ -31,15 +32,9 @@ public class App {
 
     private static List<User> getUsersFromFile() {
 
-        try {
-            Path path = Paths.get(FILENAME);
-            return Files.readAllLines(path).stream().map(line ->
+            return new FileUtils().readLinesFromFile(FILENAME).stream().map(line ->
                             new User(line.split(",")[0], line.split(",")[1]))
                     .toList();
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     private static void writeToFile(List<User> input) {

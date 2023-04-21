@@ -17,3 +17,11 @@ pode ser visto neste link = https://dev.to/hebertrfreitas/murmurhash-criando-um-
 ./gradlew run
 ```
 
+Ao executar o projeto o mesmo irá ler um arquivo csv na raiz chamado `users_id_list.csv` que simula uma base de 10000 usuários.
+
+O output do projeto é uma simulação caso você deseje disponibilizar uma funcionalidade para 10% dos seus usuários, 
+onde usamos o algoritmo Murmurhash para calcular um percentual sobre cada usuário e identificar se o mesmo vai ou não 
+visualizar a funcionalidade.
+
+
+
